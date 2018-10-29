@@ -62,13 +62,16 @@ function gameloop(){
                 break;
 
                 default:
-                    alert("Je t'ai surestimé.. je laisse tomber.. à plus tard.");
+                   sentence="Je t'ai surestimé.. je laisse tomber.. à plus tard.";
                     boring=9001;
                     console.log("boring is over 9000!!!!!!!!!!!");
                 break;
             }
             if(boring<9000){
                 userInput=Number(prompt(sentence));
+            }
+            else{
+
             }
         }while(((isNaN(userInput)||userInput>80||userInput<20))&&boring<9000);
         if(boring<9000){
@@ -88,5 +91,5 @@ function gameloop(){
                 break;
             }
         }
-    }while(message>3||message<1||boring<9000);
+    }while(message<3||message>3||boring<9000);
 }
