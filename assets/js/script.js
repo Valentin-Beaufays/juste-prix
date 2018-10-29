@@ -22,7 +22,6 @@ function test(userInput, randomNumber){
 
 function gameloop(){
     let randomNumber=randomGenerator();
-    console.log(randomNumber);
     let playerTry=0;
     let userInput=0;
     let message=0;
