@@ -1,0 +1,22 @@
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.btn {
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  background-color: #b60101;
+  border: 0px;
+  -webkit-box-shadow: 3px 3px 2px grey;
+  box-shadow: 3px 3px 2px grey; }
+  .btn:active {
+    -webkit-box-shadow: 1px 1px 1px grey;
+    box-shadow: 1px 1px 1px grey;
+    -webkit-transform: translate(2px, 2px);
+    -ms-transform: translate(2px, 2px);
+    transform: translate(2px, 2px); }
