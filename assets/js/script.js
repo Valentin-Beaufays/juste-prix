@@ -15,8 +15,11 @@ function test(userInput, randomNumber){
     else if(userInput>randomNumber){
         return 2;
     }
-    else{
+    else if(userInput===randomNumber){
         return 3;
+    }
+    else{
+        return 4;//error
     }
 }
 
@@ -25,10 +28,16 @@ function gameloop(){
     let playerTry=0;
     let userInput=0;
     let message=0;
+    let boring=0;
+    let sentence="";
+
     do{
-        let boring=0;
+        
+        boring=0;
         playerTry++;
+
         do{
+
             switch(boring){
                 case 0:
                     sentence="Essaye de deviner a quel nombre je pense...\n il se trouve entre "+min+" et "+max+":";
@@ -51,7 +60,7 @@ function gameloop(){
                 break;
 
                 case 4:
-                    alert=("ok..\ntestons autre chose..");
+                    sentence=("ok..\ntestons autre chose..");
                     sentence="*...essayons la psychologie inversée...*\nNe rentre pas un nombre entre "+min+" et "+max+".";
                     boring++;
                 break;
@@ -62,21 +71,26 @@ function gameloop(){
                 break;
 
                 default:
-                   sentence="Je t'ai surestimé.. je laisse tomber.. à plus tard.";
+                   sentence="Je t'ai surestimé.. je laisse tomber..";
                     boring=9001;
                     console.log("boring is over 9000!!!!!!!!!!!");
                 break;
             }
+
             if(boring<9000){
                 userInput=Number(prompt(sentence));
             }
             else{
-
+                alert(sentence);
             }
+
         }while(((isNaN(userInput)||userInput>80||userInput<20))&&boring<9000);
+
         if(boring<9000){
+
             message=test(userInput,randomNumber);
-            switch (message){
+
+            switch(message){
                 case 1:
                     alert("C'est plus!");
                 break;
@@ -87,9 +101,12 @@ function gameloop(){
                     alert("C'est juste!\nTu as trouvé en "+playerTry+" coups!");
                 break;
                 default:
-                    alert("C'est plutôt gênant..\nCe n'était pas sensé arriver...\nj'ai rencontré un GROS INSECTE.. :'(\nÀ plus tard du coup.. ");
+                    alert("C'est plutôt gênant..\nCe n'était pas sensé arriver...\nj'ai rencontré un GROS INSECTE.. :'(");
                 break;
             }
+
         }
-    }while(message<3||message>3||boring<9000);
+
+    }while((message<3||message>3)&&boring<9000);
+
 }
